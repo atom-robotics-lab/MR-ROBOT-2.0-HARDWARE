@@ -21,22 +21,10 @@ include_directories(
   ${image_transport_INCLUDE_DIRS}
 )
 
-# Declare a C++ executable
-# add_executable(your_node src/your_node.cpp)
-
-# Specify libraries to link a library or executable target against
-# ament_target_dependencies( rclcpp sensor_msgs cv_bridge image_transport)
-
-# Install targets
-# install(TARGETS
-#   your_node
-#   DESTINATION lib/${PROJECT_NAME})
-
 # Install scripts
-install(PROGRAMS
-  launch/launch_pi_nodes.py
-  DESTINATION lib/${PROJECT_NAME}
-)
+# install(PROGRAMS
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 install(
   DIRECTORY
