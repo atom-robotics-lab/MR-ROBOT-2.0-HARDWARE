@@ -23,7 +23,8 @@ include_directories(
 
 # Install scripts
 install(PROGRAMS
-  scripts/twist_to_pwm.py
+  # scripts/twist_to_pwm.py
+  scripts
   DESTINATION lib/${PROJECT_NAME}
 )
 

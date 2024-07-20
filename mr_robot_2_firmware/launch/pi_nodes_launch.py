@@ -1,41 +1,32 @@
-import os
-import subprocess
 import launch
 import launch_ros.actions
 from launch import LaunchDescription
-from launch.actions import LogInfo
-from launch.actions import ExecuteProcess, TimerAction
+from launch.actions import LogInfo, ExecuteProcess, TimerAction
 
 PI_USER = 'atom'
-PI_HOST = '192.168.1.6'
+PI_HOST = '192.168.2.102'
 PI_PASSWORD = '2811'
 PI_WS_DIR = '~/ros2_ws'
 LAUNCH_FILE = 'ydlidar_launch.py'
 
 def generate_launch_description():
     def run_on_pi(command):
-        # Construct & executte the SSH command using sshpass for password authentication
-        ssh_command = f"sshpass -p {PI_PASSWORD} ssh {PI_USER}@{PI_HOST} {command}"
+        # Construct & execute the SSH command using sshpass for password authentication
+        ssh_command = f"sshpass -p {PI_PASSWORD} ssh {PI_USER}@{PI_HOST} 'bash -c \"{command}\"'"
         return ExecuteProcess(cmd=['bash', '-c', ssh_command], output='screen')
 
     return LaunchDescription([
-         # Log message to check SSH connection & verify SSH conectivity
+        # Log message to check SSH connection & verify SSH connectivity
         LogInfo(msg="Checking SSH connection to {}...".format(PI_HOST)),
         run_on_pi("echo SSH connection to {} successful.".format(PI_HOST)),
         
         # Change to the ROS 2 workspace directory on the Raspberry Pi
         LogInfo(msg="Changing directory to {} on {}...".format(PI_WS_DIR, PI_HOST)),
-        run_on_pi("cd {}".format(PI_WS_DIR)),
+        run_on_pi(f"cd {PI_WS_DIR} && pwd"),
         
-        # Source the ROS 2 setup script on the Raspberry Pi
-        LogInfo(msg="Sourcing ROS 2 setup script on {}...".format(PI_HOST)),
-        run_on_pi("source {}/install/setup.bash".format(PI_WS_DIR)),
-        
-        LogInfo(msg="ROS 2 setup script sourced successfully on {}.".format(PI_HOST)),
-        
-        # Execute the launch file on the Raspberry Pi
-        LogInfo(msg="Launching {} on {}...".format(LAUNCH_FILE, PI_HOST)),
-        run_on_pi("ros2 launch ydlidar_ros2_driver {}".format(LAUNCH_FILE)),
+        # Source the ROS 2 setup script on the Raspberry Pi and execute the launch file
+        LogInfo(msg="Sourcing ROS 2 setup script and launching {} on {}...".format(LAUNCH_FILE, PI_HOST)),
+        run_on_pi(f"cd {PI_WS_DIR} && source install/setup.bash && ros2 launch ydlidar_ros2_driver {LAUNCH_FILE}"),
         
         # Launching RViz on the host machine with a timer
         LogInfo(msg="Launching RViz on the host machine..."),
