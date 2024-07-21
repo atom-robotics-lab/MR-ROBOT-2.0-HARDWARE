@@ -3,7 +3,6 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Int32
-import time
 from math import pi
 
 class DifferentialDriver(Node):
@@ -11,11 +10,11 @@ class DifferentialDriver(Node):
         super().__init__('cmdvel_listener')
         
         # Parameters for testing
-        self.motor_rpm = 100
-        self.wheel_diameter = 0.113
-        self.wheel_separation = 0.24
-        self.max_pwm_val = 100
-        self.min_pwm_val = -100
+        self.motor_rpm = 100  # Max RPM of your motor
+        self.wheel_diameter = 0.113  # Wheel diameter in meters
+        self.wheel_separation = 0.24  # Distance between the wheels in meters
+        self.max_pwm_val = 255  # Max PWM value
+        self.min_pwm_val = -255  # Min PWM value
 
         self.subscription = self.create_subscription(
             Twist,
@@ -30,12 +29,8 @@ class DifferentialDriver(Node):
         self.left_pwm = Int32()
         self.right_pwm = Int32()  
 
-        self.wheel_diameter = self.wheel_diameter / 100
-        self.wheel_separation = self.wheel_separation / 100
-
-        # self.params_setup()
         self.wheel_radius = self.wheel_diameter / 2
-        self.circumference = 2 * pi * self.wheel_radius
+        self.circumference = pi * self.wheel_diameter
         self.max_speed = (self.circumference * self.motor_rpm) / 60
 
         self.get_logger().info('Differential Drive Initialized with following Params-')
@@ -44,13 +39,6 @@ class DifferentialDriver(Node):
         self.get_logger().info(f'Wheel Separation: {self.wheel_separation} m')
         self.get_logger().info(f'Robot Max Speed: {self.max_speed} m/sec')
         self.get_logger().info(f'Robot Max PWM: {self.max_pwm_val}')
-
-    # def params_setup(self):
-    #     self.motor_rpm = self.get_parameter('mr_robot_firmware.motor_rpm').get_parameter_value().integer_value
-    #     self.wheel_diameter = self.get_parameter('mr_robot_firmware.wheel_diameter').get_parameter_value().double_value
-    #     self.wheel_separation = self.get_parameter('mr_robot_firmware.wheel_separation').get_parameter_value().double_value
-    #     self.max_pwm_val = self.get_parameter('mr_robot_firmware.twist_max_pwm').get_parameter_value().integer_value
-    #     self.min_pwm_val = self.get_parameter('mr_robot_firmware.twist_min_pwm').get_parameter_value().integer_value
 
     def stop(self):
         self.left_pwm.data = 0

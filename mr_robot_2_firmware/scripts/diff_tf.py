@@ -112,8 +112,8 @@ class DiffTf(Node):
 
         transform_stamped_msg = TransformStamped()
         transform_stamped_msg.header.stamp = now.to_msg()
-        transform_stamped_msg.header.frame_id = self.base_frame_id
-        transform_stamped_msg.child_frame_id = self.odom_frame_id
+        transform_stamped_msg.header.frame_id = self.odom_frame_id  # Should be "odom"
+        transform_stamped_msg.child_frame_id = self.base_frame_id   # Should be "base_link"
         transform_stamped_msg.transform.translation.x = self.x
         transform_stamped_msg.transform.translation.y = self.y
         transform_stamped_msg.transform.translation.z = 0.0
@@ -142,6 +142,7 @@ class DiffTf(Node):
         self.get_logger().info(f"Distance Left: {d_left}, Distance Right: {d_right}, Distance: {d}, Theta: {th}")
         self.get_logger().info(f"Position - x: {self.x}, y: {self.y}, theta: {self.th}")
         self.get_logger().info(f"Velocities - linear: {self.dx}, angular: {self.dr}")
+
 
 
 
