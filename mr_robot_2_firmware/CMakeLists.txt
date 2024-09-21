@@ -22,9 +22,11 @@ include_directories(
 )
 
 # Install scripts
-# install(PROGRAMS
-#   DESTINATION lib/${PROJECT_NAME}
-# )
+install(PROGRAMS
+  # scripts/twist_to_pwm.py
+  scripts
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 install(
   DIRECTORY
