@@ -11,7 +11,7 @@ class DifferentialDriver(Node):
         
         # Parameters for testing
         self.motor_rpm = 100  # Max RPM of your motor
-        self.wheel_diameter = 0.113  # Wheel diameter in meters
+        self.wheel_diameter = 0.394  # Wheel diameter in meters
         self.wheel_separation = 0.24  # Distance between the wheels in meters
         self.max_pwm_val = 255  # Max PWM value
         self.min_pwm_val = -255  # Min PWM value
@@ -23,11 +23,11 @@ class DifferentialDriver(Node):
             10
         )
 
-        self.left_pwm_pub = self.create_publisher(Int32, '/left_pwm', 10)
-        self.right_pwm_pub = self.create_publisher(Int32, '/right_pwm', 10)
+        self.pwm_pub = self.create_publisher(Int32, '/pwm', 10)
 
-        self.left_pwm = Int32()
-        self.right_pwm = Int32()  
+        self.pwm = Int32()
+        # self.pwm = [0,0]
+    
 
         self.wheel_radius = self.wheel_diameter / 2
         self.circumference = pi * self.wheel_diameter
@@ -41,14 +41,12 @@ class DifferentialDriver(Node):
         self.get_logger().info(f'Robot Max PWM: {self.max_pwm_val}')
 
     def stop(self):
-        self.left_pwm.data = 0
-        self.right_pwm.data = 0
-        self.left_pwm_pub.publish(self.left_pwm)
-        self.right_pwm_pub.publish(self.right_pwm)
+        self.pwm.data = 0
+        self.pwm_pub.publish(self.pwm)
 
     def get_pwm(self, left_speed, right_speed):
-        lspeedPWM = max(min((left_speed / self.max_speed) * self.max_pwm_val, self.max_pwm_val), self.min_pwm_val)
-        rspeedPWM = max(min((right_speed / self.max_speed) * self.max_pwm_val, self.max_pwm_val), self.min_pwm_val)
+        lspeedPWM = int(max(min((left_speed / self.max_speed) * self.max_pwm_val, self.max_pwm_val), self.min_pwm_val))
+        rspeedPWM = int(max(min((right_speed / self.max_speed) * self.max_pwm_val, self.max_pwm_val), self.min_pwm_val))
 
         return lspeedPWM, rspeedPWM
     
@@ -58,14 +56,17 @@ class DifferentialDriver(Node):
 
         right_vel = linear_vel + (angular_vel * self.wheel_separation) / 2  # right wheel velocity
         left_vel = linear_vel - (angular_vel * self.wheel_separation) / 2  # left wheel velocity
-
+        
         left_pwm_data, right_pwm_data = self.get_pwm(left_vel, right_vel)
 
-        self.left_pwm.data = int(left_pwm_data)
-        self.right_pwm.data = int(right_pwm_data)
+        left_pwm_data = max(-255, min(255, left_pwm_data))
+        right_pwm_data = max(-255, min(255, right_pwm_data))
 
-        self.left_pwm_pub.publish(self.left_pwm)
-        self.right_pwm_pub.publish(self.right_pwm)
+        self.pwm.data = (left_pwm_data+255*2)*1000+(right_pwm_data+255*2)
+        print(f"{self.pwm.data//1000 - 510},{self.pwm.data%1000 - 510} ")
+        # print(self.pwm[1][1])
+    
+        self.pwm_pub.publish(self.pwm)
 
 def main(args=None):
     rclpy.init(args=args)
