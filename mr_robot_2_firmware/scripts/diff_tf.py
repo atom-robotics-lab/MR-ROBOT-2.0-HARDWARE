@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from math import sin, cos, pi
@@ -32,7 +33,7 @@ class DiffTf(Node):
 
         self.ticks_meter = float(
             self.declare_parameter('ticks_meter', 6550).value)  # The number of wheel encoder ticks per meter of travel
-        self.base_width = float(self.declare_parameter('base_width', 0.245).value)  # The wheel base width in meters
+        self.base_width = float(self.declare_parameter('base_width', 0.127).value)  # The wheel base width in meters
 
         self.base_frame_id = self.declare_parameter('base_frame_id',
                                                     'base_link').value  # the name of the base frame of the robot
@@ -139,9 +140,9 @@ class DiffTf(Node):
 
         # Debugging logs
         self.get_logger().info(f"Left Encoder: {self.left}, Right Encoder: {self.right}")
-        self.get_logger().info(f"Distance Left: {d_left}, Distance Right: {d_right}, Distance: {d}, Theta: {th}")
-        self.get_logger().info(f"Position - x: {self.x}, y: {self.y}, theta: {self.th}")
-        self.get_logger().info(f"Velocities - linear: {self.dx}, angular: {self.dr}")
+        # self.get_logger().info(f"Distance Left: {d_left}, Distance Right: {d_right}, Distance: {d}, Theta: {th}")
+        # self.get_logger().info(f"Position - x: {self.x}, y: {self.y}, theta: {self.th}")
+        # self.get_logger().info(f"Velocities - linear: {self.dx}, angular: {self.dr}")
 
 
 
@@ -149,7 +150,7 @@ class DiffTf(Node):
     def lwheel_callback(self, msg):
         enc = msg.data
     
-        self.get_logger().info(f"Left encoder ticks received: {enc}")
+        # self.get_logger().info(f"Left encoder ticks received: {enc}")
         if enc < self.encoder_low_wrap and self.prev_lencoder > self.encoder_high_wrap:
             self.lmult = self.lmult + 1
 
@@ -161,7 +162,7 @@ class DiffTf(Node):
 
     def rwheel_callback(self, msg):
         enc = msg.data
-        self.get_logger().info(f"Right encoder ticks received: {enc}")
+        # self.get_logger().info(f"Right encoder ticks received: {enc}")
         if enc < self.encoder_low_wrap and self.prev_rencoder > self.encoder_high_wrap:
             self.rmult = self.rmult + 1
 
