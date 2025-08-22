@@ -1,20 +1,26 @@
 #include <micro_ros_arduino.h>
 #include <rcl/rcl.h>
 #include <rclc/rclc.h>
+#include <std_msgs/msg/int32_multi_array.h>
 #include <std_msgs/msg/int32.h>
+// #include <stdlib.h> // for malloc
+
 #include <rclc/executor.h>
 
-#define LEFT_ENC_PIN_A 18
-#define LEFT_ENC_PIN_B 19
-#define RIGHT_ENC_PIN_A 21
-#define RIGHT_ENC_PIN_B 22
+// #define LEFT_ENC_PIN_A 18
+// #define LEFT_ENC_PIN_B 19
 
-#define LEFT_MOTOR_PWM_PIN 5
-#define LEFT_MOTOR_DIR_PIN1 16
-#define LEFT_MOTOR_DIR_PIN2 17
-#define RIGHT_MOTOR_PWM_PIN 14
-#define RIGHT_MOTOR_DIR_PIN1 27
-#define RIGHT_MOTOR_DIR_PIN2 26
+#define LEFT_ENC_PIN_A 22
+#define LEFT_ENC_PIN_B 23
+
+#define RIGHT_ENC_PIN_A 35
+#define RIGHT_ENC_PIN_B 32
+
+#define LEFT_MOTOR_RPWM_PIN 25
+#define LEFT_MOTOR_LPWM_PIN 26
+
+#define RIGHT_MOTOR_RPWM_PIN 21
+#define RIGHT_MOTOR_LPWM_PIN 5
 
 // Encoder values
 volatile long long leftEncoderValue = 0;
@@ -34,10 +40,8 @@ rcl_allocator_t allocator;
 rcl_node_t node;
 
 // ROS subscriber variables
-rcl_subscription_t left_pwm_subscriber;
-rcl_subscription_t right_pwm_subscriber;
-std_msgs__msg__Int32 left_pwm_msg;
-std_msgs__msg__Int32 right_pwm_msg;
+rcl_subscription_t pwm_subscriber;
+std_msgs__msg__Int32 pwm_msg;
 rclc_executor_t executor;
 
 // Interrupt service routines for encoders
@@ -58,35 +62,46 @@ void IRAM_ATTR updateRightEncoder() {
 }
 
 // Callback functions for PWM subscribers
-void leftPwmCallback(const void * msgin) {
+void PwmCallback(const void * msgin) {
   const std_msgs__msg__Int32 * msg = (const std_msgs__msg__Int32 *)msgin;
-  leftPwmValue = msg->data;
-  analogWrite(LEFT_MOTOR_PWM_PIN, abs(leftPwmValue));
-  if (leftPwmValue > 0) {
-    digitalWrite(LEFT_MOTOR_DIR_PIN1, HIGH);
-    digitalWrite(LEFT_MOTOR_DIR_PIN2, LOW);
-  } else {
-    digitalWrite(LEFT_MOTOR_DIR_PIN1, LOW);
-    digitalWrite(LEFT_MOTOR_DIR_PIN2, HIGH);
+  leftPwmValue = ((msg->data)/1000) - 255*2;
+  if(leftPwmValue >= 0 ){
+  analogWrite(LEFT_MOTOR_RPWM_PIN, abs(leftPwmValue));
+  analogWrite(LEFT_MOTOR_LPWM_PIN, abs(0));}
+  else{
+    analogWrite(LEFT_MOTOR_RPWM_PIN, abs(0));
+  analogWrite(LEFT_MOTOR_LPWM_PIN, abs(leftPwmValue));
+  }
+
+  // Serial.println(leftPwmValue);
+
+  rightPwmValue = ((msg->data)%1000) - 255*2;
+
+  if(rightPwmValue >= 0 ){
+  analogWrite(RIGHT_MOTOR_RPWM_PIN, abs(rightPwmValue));
+  analogWrite(RIGHT_MOTOR_LPWM_PIN, abs(0));}
+  else{
+    analogWrite(RIGHT_MOTOR_RPWM_PIN, abs(0));
+  analogWrite(RIGHT_MOTOR_LPWM_PIN, abs(rightPwmValue));
   }
 }
 
-void rightPwmCallback(const void * msgin) {
-  const std_msgs__msg__Int32 * msg = (const std_msgs__msg__Int32 *)msgin;
-  rightPwmValue = msg->data;
-  analogWrite(RIGHT_MOTOR_PWM_PIN, abs(rightPwmValue));
-  if (rightPwmValue > 0) {
-    digitalWrite(RIGHT_MOTOR_DIR_PIN1, HIGH);
-    digitalWrite(RIGHT_MOTOR_DIR_PIN2, LOW);
-  } else {
-    digitalWrite(RIGHT_MOTOR_DIR_PIN1, LOW);
-    digitalWrite(RIGHT_MOTOR_DIR_PIN2, HIGH);
-  }
-}
+// void rightPwmCallback(const void * msgin) {
+//   const std_msgs__msg__Int32 * msg = (const std_msgs__msg__Int32 *)msgin;
+//   rightPwmValue = msg->data[1];
+//   analogWrite(RIGHT_MOTOR_RPWM_PIN, abs(rightPwmValue));
+//   analogWrite(RIGHT_MOTOR_LPWM_PIN, abs(0));
+// }
 
 void setup() {
+  // pwm_msg.data.data = (int32_t*)malloc(2 * sizeof(int32_t)); // for left and right motor
+  // pwm_msg.data.size = 2;
+  // pwm_msg.data.capacity = 2;
+
   Serial.begin(115200);
-  set_microros_wifi_transports("The Pot", "passworf", "192.168.2.105", 8888);
+  set_microros_transports();
+  // set_microros_wifi_transports("A.T.O.M_Labs", "atom281121", "192.168.100.30", 8888);
+  // set_microros_wifi_transports("iPhone", "aryanaryan", "172.20.10.13", 8888);
 
   // Initialize encoder pins
   pinMode(LEFT_ENC_PIN_A, INPUT);
@@ -95,12 +110,13 @@ void setup() {
   pinMode(RIGHT_ENC_PIN_B, INPUT);
 
   // Initialize motor control pins
-  pinMode(LEFT_MOTOR_PWM_PIN, OUTPUT);
-  pinMode(LEFT_MOTOR_DIR_PIN1, OUTPUT);
-  pinMode(LEFT_MOTOR_DIR_PIN2, OUTPUT);
-  pinMode(RIGHT_MOTOR_PWM_PIN, OUTPUT);
-  pinMode(RIGHT_MOTOR_DIR_PIN1, OUTPUT);
-  pinMode(RIGHT_MOTOR_DIR_PIN2, OUTPUT);
+  pinMode(LEFT_MOTOR_RPWM_PIN, OUTPUT);
+
+  pinMode(RIGHT_MOTOR_RPWM_PIN, OUTPUT);
+
+  pinMode(LEFT_MOTOR_LPWM_PIN, OUTPUT);
+
+  pinMode(RIGHT_MOTOR_LPWM_PIN, OUTPUT);
 
   // Attach interrupts
   attachInterrupt(digitalPinToInterrupt(LEFT_ENC_PIN_A), updateLeftEncoder, RISING);
@@ -119,12 +135,11 @@ void setup() {
   rclc_publisher_init_default(&right_encoder_publisher, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "right_encoder_ticks");
 
   // Initialize subscribers
-  rclc_subscription_init_default(&left_pwm_subscriber, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "left_pwm");
-  rclc_subscription_init_default(&right_pwm_subscriber, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "right_pwm");
+  rclc_subscription_init_default(&pwm_subscriber, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "pwm");
+
   // Initialize executor
   rclc_executor_init(&executor, &support.context, 2, &allocator);
-  rclc_executor_add_subscription(&executor, &left_pwm_subscriber, &left_pwm_msg, &leftPwmCallback, ON_NEW_DATA);
-  rclc_executor_add_subscription(&executor, &right_pwm_subscriber, &right_pwm_msg, &rightPwmCallback, ON_NEW_DATA);
+  rclc_executor_add_subscription(&executor, &pwm_subscriber, &pwm_msg, &PwmCallback, ON_NEW_DATA);
   // Initialize messages
   left_encoder_msg.data = 0;
   right_encoder_msg.data = 0;
@@ -136,15 +151,15 @@ void loop() {
 
   // Update and publish encoder data
   left_encoder_msg.data = leftEncoderValue;
-  right_encoder_msg.data = rightEncoderValue;
+  right_encoder_msg.data = rightEncoderValue*-1;
 
-  Serial.print("left_encoder: ");
-  Serial.println(leftEncoderValue);
-  Serial.print("right_encoder: ");
-  Serial.println(rightEncoderValue);
+  // Serial.print("left_encoder: ");
+  // Serial.println(leftEncoderValue);
+  // Serial.print("right_encoder: ");
+  // Serial.println(rightEncoderValue);
 
-  rcl_publish(&left_encoder_publisher, &left_encoder_msg, NULL);
   rcl_publish(&right_encoder_publisher, &right_encoder_msg, NULL);
+  rcl_publish(&left_encoder_publisher, &left_encoder_msg, NULL);
 
   delay(100);
 }
