@@ -31,8 +31,10 @@ class DiffTf(Node):
         self.rate_hz = self.declare_parameter("rate_hz", 10.0).value  # the rate at which to publish the transform
         self.create_timer(1.0 / self.rate_hz, self.update)
 
-        self.ticks_meter = float(
-            self.declare_parameter('ticks_meter', 6550).value)  # The number of wheel encoder ticks per meter of travel
+        self.ticks_meter_l = float(
+            self.declare_parameter('ticks_meter_l', 445).value)  # The number of wheel encoder ticks per meter of travel
+        self.ticks_meter_r = float(
+            self.declare_parameter('ticks_meter_r', 466).value)  # The number of wheel encoder ticks per meter of travel
         self.base_width = float(self.declare_parameter('base_width', 0.127).value)  # The wheel base width in meters
 
         self.base_frame_id = self.declare_parameter('base_frame_id',
@@ -85,8 +87,8 @@ class DiffTf(Node):
             d_left = 0
             d_right = 0
         else:
-            d_left = (self.left - self.enc_left) / self.ticks_meter
-            d_right = (self.right - self.enc_right) / self.ticks_meter
+            d_left = (self.left - self.enc_left) / self.ticks_meter_l
+            d_right = (self.right - self.enc_right) / self.ticks_meter_r
 
         self.enc_left = self.left
         self.enc_right = self.right

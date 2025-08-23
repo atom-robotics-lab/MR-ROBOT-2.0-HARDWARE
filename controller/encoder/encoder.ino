@@ -7,10 +7,12 @@
 
 #include <rclc/executor.h>
 
-// #define LEFT_ENC_PIN_A 18
-// #define LEFT_ENC_PIN_B 19
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+#include <sensor_msgs/msg/imu.h>
 
-#define LEFT_ENC_PIN_A 22
+#define LEFT_ENC_PIN_A 34
 #define LEFT_ENC_PIN_B 23
 
 #define RIGHT_ENC_PIN_A 35
@@ -19,8 +21,12 @@
 #define LEFT_MOTOR_RPWM_PIN 25
 #define LEFT_MOTOR_LPWM_PIN 26
 
-#define RIGHT_MOTOR_RPWM_PIN 21
+#define RIGHT_MOTOR_RPWM_PIN 33
 #define RIGHT_MOTOR_LPWM_PIN 5
+
+
+Adafruit_MPU6050 mpu; 
+sensor_msgs__msg__Imu imu_msg;
 
 // Encoder values
 volatile long long leftEncoderValue = 0;
@@ -33,6 +39,9 @@ volatile int32_t rightPwmValue = 0;
 // ROS publisher variables
 rcl_publisher_t left_encoder_publisher;
 rcl_publisher_t right_encoder_publisher;
+
+rcl_publisher_t imu_pub;
+
 std_msgs__msg__Int32 left_encoder_msg;
 std_msgs__msg__Int32 right_encoder_msg;
 rclc_support_t support;
@@ -100,8 +109,13 @@ void setup() {
 
   Serial.begin(115200);
   set_microros_transports();
-  // set_microros_wifi_transports("A.T.O.M_Labs", "atom281121", "192.168.100.30", 8888);
-  // set_microros_wifi_transports("iPhone", "aryanaryan", "172.20.10.13", 8888);
+
+  if (!mpu.begin()) {
+    Serial.println("Failed to find MPU6050 chip");
+    while (1) {
+      delay(10);
+    }
+  }
 
   // Initialize encoder pins
   pinMode(LEFT_ENC_PIN_A, INPUT);
@@ -117,6 +131,13 @@ void setup() {
   pinMode(LEFT_MOTOR_LPWM_PIN, OUTPUT);
 
   pinMode(RIGHT_MOTOR_LPWM_PIN, OUTPUT);
+  
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+ 
+
+  mpu.setFilterBandwidth(MPU6050_BAND_5_HZ);
 
   // Attach interrupts
   attachInterrupt(digitalPinToInterrupt(LEFT_ENC_PIN_A), updateLeftEncoder, RISING);
@@ -133,6 +154,7 @@ void setup() {
   // Initialize publishers
   rclc_publisher_init_default(&left_encoder_publisher, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "left_encoder_ticks");
   rclc_publisher_init_default(&right_encoder_publisher, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "right_encoder_ticks");
+  rclc_publisher_init_default(&imu_pub, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Imu), "imu");
 
   // Initialize subscribers
   rclc_subscription_init_default(&pwm_subscriber, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32), "pwm");
@@ -153,13 +175,28 @@ void loop() {
   left_encoder_msg.data = leftEncoderValue;
   right_encoder_msg.data = rightEncoderValue*-1;
 
-  // Serial.print("left_encoder: ");
-  // Serial.println(leftEncoderValue);
-  // Serial.print("right_encoder: ");
-  // Serial.println(rightEncoderValue);
-
   rcl_publish(&right_encoder_publisher, &right_encoder_msg, NULL);
   rcl_publish(&left_encoder_publisher, &left_encoder_msg, NULL);
+
+  // --- IMU Publish ---
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+
+  imu_msg.linear_acceleration.x = a.acceleration.x;
+  imu_msg.linear_acceleration.y = a.acceleration.y;
+  imu_msg.linear_acceleration.z = a.acceleration.z;
+
+  imu_msg.angular_velocity.x = g.gyro.x;
+  imu_msg.angular_velocity.y = g.gyro.y;
+  imu_msg.angular_velocity.z = g.gyro.z;
+
+  // orientation (MPU6050 gyro+accel se direct orientation nahi milta → blank rakho)
+  imu_msg.orientation.w = 0.0;
+  imu_msg.orientation.x = 0.0;
+  imu_msg.orientation.y = 0.0;
+  imu_msg.orientation.z = 0.0;
+
+  rcl_publish(&imu_pub, &imu_msg, NULL);
 
   delay(100);
 }
