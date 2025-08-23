@@ -9,22 +9,18 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(cv_bridge REQUIRED)
-find_package(image_transport REQUIRED)
 
 # Specify additional locations of header files
 include_directories(
   include
   ${rclcpp_INCLUDE_DIRS}
   ${sensor_msgs_INCLUDE_DIRS}
-  ${cv_bridge_INCLUDE_DIRS}
-  ${image_transport_INCLUDE_DIRS}
 )
 
 # Install scripts
 install(PROGRAMS
-  # scripts/twist_to_pwm.py
-  scripts
+  scripts/twist_to_pwm.py
+  scripts/diff_tf.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
