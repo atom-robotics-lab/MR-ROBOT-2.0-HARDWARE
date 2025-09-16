@@ -1,5 +1,10 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+import os
+from ament_index_python.packages import get_package_share_directory
+
+pkg_share = get_package_share_directory('mr_robot_2_firmware')
+
 
 def generate_launch_description():
     return LaunchDescription([
@@ -15,4 +20,12 @@ def generate_launch_description():
             name='diff_tf',
             output='screen'
         ),
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_node',
+            output='screen',
+            parameters=[os.path.join(pkg_share, 'config/ekf.yaml')]
+    )
     ])
+    
