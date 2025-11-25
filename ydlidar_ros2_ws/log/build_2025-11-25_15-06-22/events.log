@@ -1,0 +1,796 @@
+[0.000000] (-) TimerEvent: {}
+[0.001984] (ydlidar_ros2_driver) JobQueued: {'identifier': 'ydlidar_ros2_driver', 'dependencies': OrderedDict()}
+[0.002726] (ydlidar_ros2_driver) JobStarted: {'identifier': 'ydlidar_ros2_driver'}
+[0.098292] (-) TimerEvent: {}
+[0.164326] (ydlidar_ros2_driver) JobProgress: {'identifier': 'ydlidar_ros2_driver', 'progress': 'cmake'}
+[0.166637] (ydlidar_ros2_driver) Command: {'cmd': ['/usr/bin/cmake', '/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver'], 'cwd': '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pi'), ('SSH_CLIENT', '10.42.0.14 43896 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pi/microros_ws/install/visualization_msgs/lib:/home/pi/microros_ws/install/test_msgs/lib:/home/pi/microros_ws/install/example_interfaces/lib:/home/pi/microros_ws/install/action_msgs/lib:/home/pi/microros_ws/install/unique_identifier_msgs/lib:/home/pi/microros_ws/install/trajectory_msgs/lib:/home/pi/microros_ws/install/stereo_msgs/lib:/home/pi/microros_ws/install/std_srvs/lib:/home/pi/microros_ws/install/shape_msgs/lib:/home/pi/microros_ws/install/sensor_msgs/lib:/home/pi/microros_ws/install/nav_msgs/lib:/home/pi/microros_ws/install/diagnostic_msgs/lib:/home/pi/microros_ws/install/geometry_msgs/lib:/home/pi/microros_ws/install/actionlib_msgs/lib:/home/pi/microros_ws/install/std_msgs/lib:/home/pi/microros_ws/install/statistics_msgs/lib:/home/pi/microros_ws/install/rmw_microxrcedds/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/pi/microros_ws/install/rosgraph_msgs/lib:/home/pi/microros_ws/install/rclc_parameter/lib:/home/pi/microros_ws/install/rclc/lib:/home/pi/microros_ws/install/composition_interfaces/lib:/home/pi/microros_ws/install/rcl_interfaces/lib:/home/pi/microros_ws/install/microxrcedds_client/lib:/home/pi/microros_ws/install/microcdr/lib:/home/pi/microros_ws/install/micro_ros_utilities/lib:/home/pi/microros_ws/install/micro_ros_agent/lib:/home/pi/microros_ws/install/micro_ros_msgs/lib:/home/pi/microros_ws/install/lifecycle_msgs/lib:/home/pi/microros_ws/install/complex_msgs/lib:/home/pi/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/pi'), ('OLDPWD', '/home/pi/mrrobot/src'), ('SSH_TTY', '/dev/pts/2'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/pi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs_py:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.42.0.14 43896 10.42.0.1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pi/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/pi/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/microxrcedds_client:/home/pi/microros_ws/install/microcdr:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/home/pi/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[0.198521] (-) TimerEvent: {}
+[0.299233] (-) TimerEvent: {}
+[0.400029] (-) TimerEvent: {}
+[0.500791] (-) TimerEvent: {}
+[0.601563] (-) TimerEvent: {}
+[0.610972] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.701761] (-) TimerEvent: {}
+[0.802475] (-) TimerEvent: {}
+[0.903292] (-) TimerEvent: {}
+[0.967478] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[1.003473] (-) TimerEvent: {}
+[1.011044] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.103683] (-) TimerEvent: {}
+[1.204443] (-) TimerEvent: {}
+[1.305292] (-) TimerEvent: {}
+[1.405996] (-) TimerEvent: {}
+[1.506756] (-) TimerEvent: {}
+[1.575026] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.606430] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.606982] (-) TimerEvent: {}
+[1.607460] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.609143] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.621912] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.707197] (-) TimerEvent: {}
+[1.808013] (-) TimerEvent: {}
+[1.908971] (-) TimerEvent: {}
+[2.009874] (-) TimerEvent: {}
+[2.110603] (-) TimerEvent: {}
+[2.211493] (-) TimerEvent: {}
+[2.217723] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.248240] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[2.249366] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.251165] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.311626] (-) TimerEvent: {}
+[2.356916] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[2.411855] (-) TimerEvent: {}
+[2.512715] (-) TimerEvent: {}
+[2.613358] (-) TimerEvent: {}
+[2.714029] (-) TimerEvent: {}
+[2.814921] (-) TimerEvent: {}
+[2.915640] (-) TimerEvent: {}
+[3.016306] (-) TimerEvent: {}
+[3.116986] (-) TimerEvent: {}
+[3.217615] (-) TimerEvent: {}
+[3.318328] (-) TimerEvent: {}
+[3.419344] (-) TimerEvent: {}
+[3.519971] (-) TimerEvent: {}
+[3.620601] (-) TimerEvent: {}
+[3.721245] (-) TimerEvent: {}
+[3.768959] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[3.821448] (-) TimerEvent: {}
+[3.922176] (-) TimerEvent: {}
+[4.022844] (-) TimerEvent: {}
+[4.123605] (-) TimerEvent: {}
+[4.224350] (-) TimerEvent: {}
+[4.302609] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[4.324582] (-) TimerEvent: {}
+[4.425863] (-) TimerEvent: {}
+[4.526570] (-) TimerEvent: {}
+[4.627301] (-) TimerEvent: {}
+[4.727988] (-) TimerEvent: {}
+[4.828660] (-) TimerEvent: {}
+[4.929345] (-) TimerEvent: {}
+[5.030111] (-) TimerEvent: {}
+[5.130817] (-) TimerEvent: {}
+[5.231487] (-) TimerEvent: {}
+[5.332166] (-) TimerEvent: {}
+[5.432927] (-) TimerEvent: {}
+[5.533644] (-) TimerEvent: {}
+[5.634389] (-) TimerEvent: {}
+[5.681594] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[5.734567] (-) TimerEvent: {}
+[5.835235] (-) TimerEvent: {}
+[5.935904] (-) TimerEvent: {}
+[6.036627] (-) TimerEvent: {}
+[6.137427] (-) TimerEvent: {}
+[6.238480] (-) TimerEvent: {}
+[6.339192] (-) TimerEvent: {}
+[6.439985] (-) TimerEvent: {}
+[6.540976] (-) TimerEvent: {}
+[6.641755] (-) TimerEvent: {}
+[6.742515] (-) TimerEvent: {}
+[6.837599] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[6.842688] (-) TimerEvent: {}
+[6.943854] (-) TimerEvent: {}
+[7.040165] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[7.044017] (-) TimerEvent: {}
+[7.144779] (-) TimerEvent: {}
+[7.245454] (-) TimerEvent: {}
+[7.250658] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[7.345622] (-) TimerEvent: {}
+[7.446247] (-) TimerEvent: {}
+[7.491408] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_microxrcedds_c;rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.546606] (-) TimerEvent: {}
+[7.647334] (-) TimerEvent: {}
+[7.747978] (-) TimerEvent: {}
+[7.848671] (-) TimerEvent: {}
+[7.949452] (-) TimerEvent: {}
+[7.957953] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_microxrcedds_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[8.049686] (-) TimerEvent: {}
+[8.150792] (-) TimerEvent: {}
+[8.251779] (-) TimerEvent: {}
+[8.352746] (-) TimerEvent: {}
+[8.453472] (-) TimerEvent: {}
+[8.554162] (-) TimerEvent: {}
+[8.654960] (-) TimerEvent: {}
+[8.755716] (-) TimerEvent: {}
+[8.856367] (-) TimerEvent: {}
+[8.957050] (-) TimerEvent: {}
+[9.057711] (-) TimerEvent: {}
+[9.124038] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[9.157904] (-) TimerEvent: {}
+[9.253314] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[9.258082] (-) TimerEvent: {}
+[9.358829] (-) TimerEvent: {}
+[9.459510] (-) TimerEvent: {}
+[9.560168] (-) TimerEvent: {}
+[9.661181] (-) TimerEvent: {}
+[9.761981] (-) TimerEvent: {}
+[9.863301] (-) TimerEvent: {}
+[9.964115] (-) TimerEvent: {}
+[10.064876] (-) TimerEvent: {}
+[10.165708] (-) TimerEvent: {}
+[10.266822] (-) TimerEvent: {}
+[10.367928] (-) TimerEvent: {}
+[10.469028] (-) TimerEvent: {}
+[10.569986] (-) TimerEvent: {}
+[10.670742] (-) TimerEvent: {}
+[10.711527] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[10.771011] (-) TimerEvent: {}
+[10.871894] (-) TimerEvent: {}
+[10.972693] (-) TimerEvent: {}
+[11.057670] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[11.072878] (-) TimerEvent: {}
+[11.173658] (-) TimerEvent: {}
+[11.274358] (-) TimerEvent: {}
+[11.375056] (-) TimerEvent: {}
+[11.475786] (-) TimerEvent: {}
+[11.576613] (-) TimerEvent: {}
+[11.639603] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[11.676810] (-) TimerEvent: {}
+[11.777564] (-) TimerEvent: {}
+[11.878577] (-) TimerEvent: {}
+[11.924606] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[11.979011] (-) TimerEvent: {}
+[12.079812] (-) TimerEvent: {}
+[12.180568] (-) TimerEvent: {}
+[12.281687] (-) TimerEvent: {}
+[12.382656] (-) TimerEvent: {}
+[12.483508] (-) TimerEvent: {}
+[12.584312] (-) TimerEvent: {}
+[12.588040] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[12.589452] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[12.684783] (-) TimerEvent: {}
+[12.785625] (-) TimerEvent: {}
+[12.886391] (-) TimerEvent: {}
+[12.987171] (-) TimerEvent: {}
+[13.088074] (-) TimerEvent: {}
+[13.188902] (-) TimerEvent: {}
+[13.253675] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[13.258782] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[13.289040] (-) TimerEvent: {}
+[13.389813] (-) TimerEvent: {}
+[13.490774] (-) TimerEvent: {}
+[13.591717] (-) TimerEvent: {}
+[13.692686] (-) TimerEvent: {}
+[13.780567] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/home/pi/microros_ws/install/sensor_msgs/share/sensor_msgs/cmake)\n'}
+[13.792868] (-) TimerEvent: {}
+[13.893617] (-) TimerEvent: {}
+[13.994405] (-) TimerEvent: {}
+[14.006593] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.0 (/home/pi/microros_ws/install/visualization_msgs/share/visualization_msgs/cmake)\n'}
+[14.094603] (-) TimerEvent: {}
+[14.152776] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found std_srvs: 4.9.0 (/home/pi/microros_ws/install/std_srvs/share/std_srvs/cmake)\n'}
+[14.194840] (-) TimerEvent: {}
+[14.295928] (-) TimerEvent: {}
+[14.396729] (-) TimerEvent: {}
+[14.484945] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[14.496931] (-) TimerEvent: {}
+[14.597705] (-) TimerEvent: {}
+[14.698389] (-) TimerEvent: {}
+[14.799037] (-) TimerEvent: {}
+[14.900216] (-) TimerEvent: {}
+[15.001244] (-) TimerEvent: {}
+[15.102373] (-) TimerEvent: {}
+[15.203168] (-) TimerEvent: {}
+[15.304089] (-) TimerEvent: {}
+[15.404818] (-) TimerEvent: {}
+[15.505586] (-) TimerEvent: {}
+[15.606295] (-) TimerEvent: {}
+[15.707274] (-) TimerEvent: {}
+[15.808093] (-) TimerEvent: {}
+[15.908857] (-) TimerEvent: {}
+[15.957531] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[16.009138] (-) TimerEvent: {}
+[16.024995] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[16.026420] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src\n'}
+[16.027415] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[16.092334] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[16.093036] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[16.109412] (-) TimerEvent: {}
+[16.110870] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[16.134159] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[16.152496] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[16.209566] (-) TimerEvent: {}
+[16.217273] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[16.217935] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[16.234859] (ydlidar_ros2_driver) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[16.261807] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[16.309868] (-) TimerEvent: {}
+[16.410774] (-) TimerEvent: {}
+[16.453673] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[16.492701] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Build files have been written to: /home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver\n'}
+[16.511138] (-) TimerEvent: {}
+[16.546530] (ydlidar_ros2_driver) CommandEnded: {'returncode': 0}
+[16.549407] (ydlidar_ros2_driver) JobProgress: {'identifier': 'ydlidar_ros2_driver', 'progress': 'build'}
+[16.556230] (ydlidar_ros2_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver', '--', '-j4', '-l4'], 'cwd': '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pi'), ('SSH_CLIENT', '10.42.0.14 43896 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pi/microros_ws/install/visualization_msgs/lib:/home/pi/microros_ws/install/test_msgs/lib:/home/pi/microros_ws/install/example_interfaces/lib:/home/pi/microros_ws/install/action_msgs/lib:/home/pi/microros_ws/install/unique_identifier_msgs/lib:/home/pi/microros_ws/install/trajectory_msgs/lib:/home/pi/microros_ws/install/stereo_msgs/lib:/home/pi/microros_ws/install/std_srvs/lib:/home/pi/microros_ws/install/shape_msgs/lib:/home/pi/microros_ws/install/sensor_msgs/lib:/home/pi/microros_ws/install/nav_msgs/lib:/home/pi/microros_ws/install/diagnostic_msgs/lib:/home/pi/microros_ws/install/geometry_msgs/lib:/home/pi/microros_ws/install/actionlib_msgs/lib:/home/pi/microros_ws/install/std_msgs/lib:/home/pi/microros_ws/install/statistics_msgs/lib:/home/pi/microros_ws/install/rmw_microxrcedds/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/pi/microros_ws/install/rosgraph_msgs/lib:/home/pi/microros_ws/install/rclc_parameter/lib:/home/pi/microros_ws/install/rclc/lib:/home/pi/microros_ws/install/composition_interfaces/lib:/home/pi/microros_ws/install/rcl_interfaces/lib:/home/pi/microros_ws/install/microxrcedds_client/lib:/home/pi/microros_ws/install/microcdr/lib:/home/pi/microros_ws/install/micro_ros_utilities/lib:/home/pi/microros_ws/install/micro_ros_agent/lib:/home/pi/microros_ws/install/micro_ros_msgs/lib:/home/pi/microros_ws/install/lifecycle_msgs/lib:/home/pi/microros_ws/install/complex_msgs/lib:/home/pi/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/pi'), ('OLDPWD', '/home/pi/mrrobot/src'), ('SSH_TTY', '/dev/pts/2'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/pi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs_py:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.42.0.14 43896 10.42.0.1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pi/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/pi/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/microxrcedds_client:/home/pi/microros_ws/install/microcdr:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/home/pi/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[16.611348] (-) TimerEvent: {}
+[16.712596] (-) TimerEvent: {}
+[16.813578] (-) TimerEvent: {}
+[16.914515] (-) TimerEvent: {}
+[17.015809] (-) TimerEvent: {}
+[17.089271] (ydlidar_ros2_driver) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/ydlidar_ros2_driver_client.dir/src/ydlidar_ros2_driver_client.cpp.o\x1b[0m\n'}
+[17.091842] (ydlidar_ros2_driver) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ydlidar_ros2_driver_node.dir/src/ydlidar_ros2_driver_node.cpp.o\x1b[0m\n'}
+[17.115566] (-) TimerEvent: {}
+[17.216862] (-) TimerEvent: {}
+[17.318695] (-) TimerEvent: {}
+[17.421463] (-) TimerEvent: {}
+[17.524567] (-) TimerEvent: {}
+[17.627138] (-) TimerEvent: {}
+[17.730392] (-) TimerEvent: {}
+[17.832123] (-) TimerEvent: {}
+[17.933353] (-) TimerEvent: {}
+[18.034721] (-) TimerEvent: {}
+[18.136000] (-) TimerEvent: {}
+[18.239849] (-) TimerEvent: {}
+[18.342187] (-) TimerEvent: {}
+[18.443455] (-) TimerEvent: {}
+[18.544414] (-) TimerEvent: {}
+[18.646612] (-) TimerEvent: {}
+[18.749192] (-) TimerEvent: {}
+[18.850159] (-) TimerEvent: {}
+[18.951490] (-) TimerEvent: {}
+[19.052651] (-) TimerEvent: {}
+[19.153750] (-) TimerEvent: {}
+[19.254666] (-) TimerEvent: {}
+[19.355730] (-) TimerEvent: {}
+[19.456941] (-) TimerEvent: {}
+[19.557751] (-) TimerEvent: {}
+[19.658716] (-) TimerEvent: {}
+[19.759567] (-) TimerEvent: {}
+[19.861911] (-) TimerEvent: {}
+[19.963112] (-) TimerEvent: {}
+[20.065047] (-) TimerEvent: {}
+[20.167623] (-) TimerEvent: {}
+[20.268506] (-) TimerEvent: {}
+[20.370555] (-) TimerEvent: {}
+[20.471921] (-) TimerEvent: {}
+[20.575195] (-) TimerEvent: {}
+[20.680577] (-) TimerEvent: {}
+[20.784410] (-) TimerEvent: {}
+[20.889013] (-) TimerEvent: {}
+[20.990751] (-) TimerEvent: {}
+[21.093851] (-) TimerEvent: {}
+[21.194876] (-) TimerEvent: {}
+[21.296681] (-) TimerEvent: {}
+[21.397574] (-) TimerEvent: {}
+[21.498374] (-) TimerEvent: {}
+[21.600450] (-) TimerEvent: {}
+[21.705471] (-) TimerEvent: {}
+[21.808969] (-) TimerEvent: {}
+[21.910713] (-) TimerEvent: {}
+[22.013046] (-) TimerEvent: {}
+[22.114262] (-) TimerEvent: {}
+[22.215343] (-) TimerEvent: {}
+[22.317503] (-) TimerEvent: {}
+[22.423288] (-) TimerEvent: {}
+[22.525172] (-) TimerEvent: {}
+[22.626363] (-) TimerEvent: {}
+[22.729502] (-) TimerEvent: {}
+[22.831786] (-) TimerEvent: {}
+[22.934449] (-) TimerEvent: {}
+[23.038553] (-) TimerEvent: {}
+[23.143089] (-) TimerEvent: {}
+[23.252404] (-) TimerEvent: {}
+[23.355778] (-) TimerEvent: {}
+[23.457401] (-) TimerEvent: {}
+[23.563083] (-) TimerEvent: {}
+[23.666064] (-) TimerEvent: {}
+[23.767532] (-) TimerEvent: {}
+[23.870279] (-) TimerEvent: {}
+[23.973183] (-) TimerEvent: {}
+[24.075613] (-) TimerEvent: {}
+[24.178007] (-) TimerEvent: {}
+[24.279232] (-) TimerEvent: {}
+[24.381510] (-) TimerEvent: {}
+[24.484456] (-) TimerEvent: {}
+[24.589252] (-) TimerEvent: {}
+[24.693078] (-) TimerEvent: {}
+[24.796816] (-) TimerEvent: {}
+[24.898392] (-) TimerEvent: {}
+[25.002715] (-) TimerEvent: {}
+[25.104316] (-) TimerEvent: {}
+[25.206473] (-) TimerEvent: {}
+[25.308044] (-) TimerEvent: {}
+[25.408974] (-) TimerEvent: {}
+[25.510310] (-) TimerEvent: {}
+[25.612632] (-) TimerEvent: {}
+[25.713775] (-) TimerEvent: {}
+[25.814579] (-) TimerEvent: {}
+[25.916498] (-) TimerEvent: {}
+[26.017356] (-) TimerEvent: {}
+[26.118459] (-) TimerEvent: {}
+[26.221097] (-) TimerEvent: {}
+[26.322452] (-) TimerEvent: {}
+[26.423614] (-) TimerEvent: {}
+[26.524742] (-) TimerEvent: {}
+[26.626309] (-) TimerEvent: {}
+[26.727552] (-) TimerEvent: {}
+[26.829045] (-) TimerEvent: {}
+[26.930315] (-) TimerEvent: {}
+[27.031598] (-) TimerEvent: {}
+[27.136360] (-) TimerEvent: {}
+[27.238420] (-) TimerEvent: {}
+[27.339664] (-) TimerEvent: {}
+[27.441509] (-) TimerEvent: {}
+[27.544662] (-) TimerEvent: {}
+[27.645641] (-) TimerEvent: {}
+[27.746853] (-) TimerEvent: {}
+[27.847764] (-) TimerEvent: {}
+[27.948820] (-) TimerEvent: {}
+[28.049650] (-) TimerEvent: {}
+[28.150605] (-) TimerEvent: {}
+[28.251555] (-) TimerEvent: {}
+[28.352572] (-) TimerEvent: {}
+[28.453662] (-) TimerEvent: {}
+[28.554581] (-) TimerEvent: {}
+[28.655425] (-) TimerEvent: {}
+[28.756441] (-) TimerEvent: {}
+[28.857294] (-) TimerEvent: {}
+[28.958136] (-) TimerEvent: {}
+[29.058937] (-) TimerEvent: {}
+[29.159783] (-) TimerEvent: {}
+[29.260849] (-) TimerEvent: {}
+[29.361681] (-) TimerEvent: {}
+[29.462592] (-) TimerEvent: {}
+[29.563559] (-) TimerEvent: {}
+[29.664376] (-) TimerEvent: {}
+[29.765499] (-) TimerEvent: {}
+[29.866940] (-) TimerEvent: {}
+[29.967762] (-) TimerEvent: {}
+[30.068686] (-) TimerEvent: {}
+[30.169521] (-) TimerEvent: {}
+[30.270397] (-) TimerEvent: {}
+[30.371281] (-) TimerEvent: {}
+[30.472191] (-) TimerEvent: {}
+[30.573319] (-) TimerEvent: {}
+[30.674282] (-) TimerEvent: {}
+[30.775282] (-) TimerEvent: {}
+[30.876189] (-) TimerEvent: {}
+[30.977037] (-) TimerEvent: {}
+[31.078232] (-) TimerEvent: {}
+[31.179100] (-) TimerEvent: {}
+[31.280257] (-) TimerEvent: {}
+[31.381476] (-) TimerEvent: {}
+[31.482610] (-) TimerEvent: {}
+[31.583613] (-) TimerEvent: {}
+[31.684427] (-) TimerEvent: {}
+[31.785628] (-) TimerEvent: {}
+[31.886461] (-) TimerEvent: {}
+[31.900227] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[31.901173] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:191:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Krequest_header\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.901789] (ydlidar_ros2_driver) StderrLine: {'line': b'  191 |     [&laser](\x1b[01;35m\x1b[Kconst std::shared_ptr<rmw_request_id_t> request_header\x1b[m\x1b[K,\n'}
+[31.902337] (ydlidar_ros2_driver) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.902952] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:192:56:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kreq\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.903531] (ydlidar_ros2_driver) StderrLine: {'line': b'  192 |   \x1b[01;35m\x1b[Kconst std::shared_ptr<std_srvs::srv::Empty::Request> req\x1b[m\x1b[K,\n'}
+[31.904107] (ydlidar_ros2_driver) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[31.904735] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:193:51:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kresponse\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.905338] (ydlidar_ros2_driver) StderrLine: {'line': b'  193 |   \x1b[01;35m\x1b[Kstd::shared_ptr<std_srvs::srv::Empty::Response> response\x1b[m\x1b[K) -> bool\n'}
+[31.905959] (ydlidar_ros2_driver) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\x1b[m\x1b[K\n'}
+[31.982987] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[31.984773] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:201:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Krequest_header\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.985977] (ydlidar_ros2_driver) StderrLine: {'line': b'  201 |     [&laser](\x1b[01;35m\x1b[Kconst std::shared_ptr<rmw_request_id_t> request_header\x1b[m\x1b[K,\n'}
+[31.986614] (-) TimerEvent: {}
+[31.987128] (ydlidar_ros2_driver) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.987995] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:202:56:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kreq\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.988662] (ydlidar_ros2_driver) StderrLine: {'line': b'  202 |   \x1b[01;35m\x1b[Kconst std::shared_ptr<std_srvs::srv::Empty::Request> req\x1b[m\x1b[K,\n'}
+[31.989289] (ydlidar_ros2_driver) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[31.989879] (ydlidar_ros2_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/mrrobot/src/ydlidar_ros2_ws/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:203:51:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kresponse\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[31.993131] (ydlidar_ros2_driver) StderrLine: {'line': b'  203 |   \x1b[01;35m\x1b[Kstd::shared_ptr<std_srvs::srv::Empty::Response> response\x1b[m\x1b[K) -> bool\n'}
+[31.993774] (ydlidar_ros2_driver) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\x1b[m\x1b[K\n'}
+[32.086863] (-) TimerEvent: {}
+[32.187704] (-) TimerEvent: {}
+[32.288651] (-) TimerEvent: {}
+[32.389575] (-) TimerEvent: {}
+[32.490411] (-) TimerEvent: {}
+[32.591243] (-) TimerEvent: {}
+[32.692072] (-) TimerEvent: {}
+[32.792976] (-) TimerEvent: {}
+[32.893810] (-) TimerEvent: {}
+[32.994650] (-) TimerEvent: {}
+[33.095492] (-) TimerEvent: {}
+[33.196351] (-) TimerEvent: {}
+[33.297191] (-) TimerEvent: {}
+[33.398020] (-) TimerEvent: {}
+[33.498843] (-) TimerEvent: {}
+[33.600145] (-) TimerEvent: {}
+[33.701043] (-) TimerEvent: {}
+[33.801865] (-) TimerEvent: {}
+[33.902680] (-) TimerEvent: {}
+[34.003513] (-) TimerEvent: {}
+[34.104338] (-) TimerEvent: {}
+[34.205267] (-) TimerEvent: {}
+[34.306081] (-) TimerEvent: {}
+[34.406996] (-) TimerEvent: {}
+[34.508018] (-) TimerEvent: {}
+[34.608890] (-) TimerEvent: {}
+[34.709703] (-) TimerEvent: {}
+[34.810485] (-) TimerEvent: {}
+[34.911276] (-) TimerEvent: {}
+[35.012196] (-) TimerEvent: {}
+[35.113415] (-) TimerEvent: {}
+[35.214554] (-) TimerEvent: {}
+[35.315389] (-) TimerEvent: {}
+[35.416183] (-) TimerEvent: {}
+[35.517270] (-) TimerEvent: {}
+[35.618467] (-) TimerEvent: {}
+[35.719726] (-) TimerEvent: {}
+[35.820575] (-) TimerEvent: {}
+[35.921473] (-) TimerEvent: {}
+[36.022630] (-) TimerEvent: {}
+[36.123715] (-) TimerEvent: {}
+[36.224885] (-) TimerEvent: {}
+[36.325675] (-) TimerEvent: {}
+[36.426449] (-) TimerEvent: {}
+[36.527206] (-) TimerEvent: {}
+[36.628027] (-) TimerEvent: {}
+[36.729195] (-) TimerEvent: {}
+[36.830016] (-) TimerEvent: {}
+[36.931187] (-) TimerEvent: {}
+[37.031984] (-) TimerEvent: {}
+[37.133159] (-) TimerEvent: {}
+[37.235450] (-) TimerEvent: {}
+[37.336323] (-) TimerEvent: {}
+[37.437562] (-) TimerEvent: {}
+[37.540637] (-) TimerEvent: {}
+[37.642773] (-) TimerEvent: {}
+[37.746516] (-) TimerEvent: {}
+[37.849172] (-) TimerEvent: {}
+[37.952819] (-) TimerEvent: {}
+[38.054212] (-) TimerEvent: {}
+[38.155447] (-) TimerEvent: {}
+[38.256809] (-) TimerEvent: {}
+[38.357686] (-) TimerEvent: {}
+[38.458484] (-) TimerEvent: {}
+[38.559306] (-) TimerEvent: {}
+[38.660149] (-) TimerEvent: {}
+[38.761412] (-) TimerEvent: {}
+[38.862319] (-) TimerEvent: {}
+[38.963555] (-) TimerEvent: {}
+[39.064422] (-) TimerEvent: {}
+[39.165740] (-) TimerEvent: {}
+[39.267514] (-) TimerEvent: {}
+[39.368366] (-) TimerEvent: {}
+[39.469259] (-) TimerEvent: {}
+[39.570079] (-) TimerEvent: {}
+[39.671303] (-) TimerEvent: {}
+[39.772147] (-) TimerEvent: {}
+[39.873421] (-) TimerEvent: {}
+[39.974265] (-) TimerEvent: {}
+[40.075221] (-) TimerEvent: {}
+[40.176402] (-) TimerEvent: {}
+[40.277292] (-) TimerEvent: {}
+[40.378765] (-) TimerEvent: {}
+[40.479776] (-) TimerEvent: {}
+[40.580944] (-) TimerEvent: {}
+[40.681729] (-) TimerEvent: {}
+[40.782512] (-) TimerEvent: {}
+[40.883567] (-) TimerEvent: {}
+[40.984431] (-) TimerEvent: {}
+[41.085490] (-) TimerEvent: {}
+[41.186447] (-) TimerEvent: {}
+[41.287369] (-) TimerEvent: {}
+[41.388313] (-) TimerEvent: {}
+[41.489201] (-) TimerEvent: {}
+[41.590039] (-) TimerEvent: {}
+[41.690991] (-) TimerEvent: {}
+[41.791822] (-) TimerEvent: {}
+[41.892698] (-) TimerEvent: {}
+[41.993567] (-) TimerEvent: {}
+[42.094456] (-) TimerEvent: {}
+[42.195276] (-) TimerEvent: {}
+[42.296164] (-) TimerEvent: {}
+[42.397160] (-) TimerEvent: {}
+[42.497963] (-) TimerEvent: {}
+[42.598947] (-) TimerEvent: {}
+[42.699963] (-) TimerEvent: {}
+[42.801070] (-) TimerEvent: {}
+[42.901963] (-) TimerEvent: {}
+[43.002786] (-) TimerEvent: {}
+[43.103707] (-) TimerEvent: {}
+[43.205073] (-) TimerEvent: {}
+[43.305913] (-) TimerEvent: {}
+[43.406769] (-) TimerEvent: {}
+[43.507644] (-) TimerEvent: {}
+[43.608615] (-) TimerEvent: {}
+[43.709657] (-) TimerEvent: {}
+[43.810453] (-) TimerEvent: {}
+[43.911261] (-) TimerEvent: {}
+[44.012121] (-) TimerEvent: {}
+[44.112974] (-) TimerEvent: {}
+[44.213773] (-) TimerEvent: {}
+[44.314570] (-) TimerEvent: {}
+[44.415398] (-) TimerEvent: {}
+[44.516184] (-) TimerEvent: {}
+[44.617091] (-) TimerEvent: {}
+[44.717905] (-) TimerEvent: {}
+[44.818755] (-) TimerEvent: {}
+[44.919689] (-) TimerEvent: {}
+[45.020535] (-) TimerEvent: {}
+[45.121832] (-) TimerEvent: {}
+[45.222661] (-) TimerEvent: {}
+[45.323458] (-) TimerEvent: {}
+[45.424370] (-) TimerEvent: {}
+[45.525339] (-) TimerEvent: {}
+[45.626485] (-) TimerEvent: {}
+[45.727276] (-) TimerEvent: {}
+[45.828074] (-) TimerEvent: {}
+[45.928933] (-) TimerEvent: {}
+[46.029874] (-) TimerEvent: {}
+[46.130735] (-) TimerEvent: {}
+[46.231857] (-) TimerEvent: {}
+[46.333144] (-) TimerEvent: {}
+[46.434797] (-) TimerEvent: {}
+[46.538374] (-) TimerEvent: {}
+[46.639206] (-) TimerEvent: {}
+[46.739981] (-) TimerEvent: {}
+[46.840768] (-) TimerEvent: {}
+[46.943694] (-) TimerEvent: {}
+[47.044589] (-) TimerEvent: {}
+[47.146026] (-) TimerEvent: {}
+[47.246997] (-) TimerEvent: {}
+[47.348585] (-) TimerEvent: {}
+[47.452396] (-) TimerEvent: {}
+[47.553254] (-) TimerEvent: {}
+[47.654054] (-) TimerEvent: {}
+[47.754808] (-) TimerEvent: {}
+[47.857255] (-) TimerEvent: {}
+[47.958901] (-) TimerEvent: {}
+[48.059832] (-) TimerEvent: {}
+[48.161004] (-) TimerEvent: {}
+[48.261977] (-) TimerEvent: {}
+[48.318511] (ydlidar_ros2_driver) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable ydlidar_ros2_driver_node\x1b[0m\n'}
+[48.362186] (-) TimerEvent: {}
+[48.463016] (-) TimerEvent: {}
+[48.563945] (-) TimerEvent: {}
+[48.665234] (-) TimerEvent: {}
+[48.766118] (-) TimerEvent: {}
+[48.867446] (-) TimerEvent: {}
+[48.968725] (-) TimerEvent: {}
+[49.071191] (-) TimerEvent: {}
+[49.172224] (-) TimerEvent: {}
+[49.273678] (-) TimerEvent: {}
+[49.374814] (-) TimerEvent: {}
+[49.477537] (-) TimerEvent: {}
+[49.578536] (-) TimerEvent: {}
+[49.679963] (-) TimerEvent: {}
+[49.781061] (-) TimerEvent: {}
+[49.883108] (-) TimerEvent: {}
+[49.984230] (-) TimerEvent: {}
+[50.085971] (-) TimerEvent: {}
+[50.187808] (-) TimerEvent: {}
+[50.289657] (-) TimerEvent: {}
+[50.390622] (-) TimerEvent: {}
+[50.491463] (-) TimerEvent: {}
+[50.493519] (ydlidar_ros2_driver) StdoutLine: {'line': b'[ 75%] Built target ydlidar_ros2_driver_node\n'}
+[50.591651] (-) TimerEvent: {}
+[50.692383] (-) TimerEvent: {}
+[50.793144] (-) TimerEvent: {}
+[50.893874] (-) TimerEvent: {}
+[50.994607] (-) TimerEvent: {}
+[51.095351] (-) TimerEvent: {}
+[51.196120] (-) TimerEvent: {}
+[51.296887] (-) TimerEvent: {}
+[51.397635] (-) TimerEvent: {}
+[51.498341] (-) TimerEvent: {}
+[51.599077] (-) TimerEvent: {}
+[51.699897] (-) TimerEvent: {}
+[51.800640] (-) TimerEvent: {}
+[51.901357] (-) TimerEvent: {}
+[52.002078] (-) TimerEvent: {}
+[52.102816] (-) TimerEvent: {}
+[52.203559] (-) TimerEvent: {}
+[52.304306] (-) TimerEvent: {}
+[52.405092] (-) TimerEvent: {}
+[52.505835] (-) TimerEvent: {}
+[52.606579] (-) TimerEvent: {}
+[52.707325] (-) TimerEvent: {}
+[52.808061] (-) TimerEvent: {}
+[52.908825] (-) TimerEvent: {}
+[53.009680] (-) TimerEvent: {}
+[53.110791] (-) TimerEvent: {}
+[53.211766] (-) TimerEvent: {}
+[53.312711] (-) TimerEvent: {}
+[53.413638] (-) TimerEvent: {}
+[53.514364] (-) TimerEvent: {}
+[53.615132] (-) TimerEvent: {}
+[53.715810] (-) TimerEvent: {}
+[53.816705] (-) TimerEvent: {}
+[53.917671] (-) TimerEvent: {}
+[54.018635] (-) TimerEvent: {}
+[54.119692] (-) TimerEvent: {}
+[54.220453] (-) TimerEvent: {}
+[54.321182] (-) TimerEvent: {}
+[54.421993] (-) TimerEvent: {}
+[54.522957] (-) TimerEvent: {}
+[54.623940] (-) TimerEvent: {}
+[54.724935] (-) TimerEvent: {}
+[54.825890] (-) TimerEvent: {}
+[54.926848] (-) TimerEvent: {}
+[55.027875] (-) TimerEvent: {}
+[55.128903] (-) TimerEvent: {}
+[55.229935] (-) TimerEvent: {}
+[55.330863] (-) TimerEvent: {}
+[55.431634] (-) TimerEvent: {}
+[55.532603] (-) TimerEvent: {}
+[55.633547] (-) TimerEvent: {}
+[55.734548] (-) TimerEvent: {}
+[55.835558] (-) TimerEvent: {}
+[55.936600] (-) TimerEvent: {}
+[56.037655] (-) TimerEvent: {}
+[56.138563] (-) TimerEvent: {}
+[56.239842] (-) TimerEvent: {}
+[56.340626] (-) TimerEvent: {}
+[56.441493] (-) TimerEvent: {}
+[56.542345] (-) TimerEvent: {}
+[56.643095] (-) TimerEvent: {}
+[56.744604] (-) TimerEvent: {}
+[56.845343] (-) TimerEvent: {}
+[56.946087] (-) TimerEvent: {}
+[57.046767] (-) TimerEvent: {}
+[57.147493] (-) TimerEvent: {}
+[57.248263] (-) TimerEvent: {}
+[57.349035] (-) TimerEvent: {}
+[57.449769] (-) TimerEvent: {}
+[57.550499] (-) TimerEvent: {}
+[57.651302] (-) TimerEvent: {}
+[57.752039] (-) TimerEvent: {}
+[57.852792] (-) TimerEvent: {}
+[57.953545] (-) TimerEvent: {}
+[58.054294] (-) TimerEvent: {}
+[58.155069] (-) TimerEvent: {}
+[58.255816] (-) TimerEvent: {}
+[58.356607] (-) TimerEvent: {}
+[58.457346] (-) TimerEvent: {}
+[58.558073] (-) TimerEvent: {}
+[58.658841] (-) TimerEvent: {}
+[58.759905] (-) TimerEvent: {}
+[58.860768] (-) TimerEvent: {}
+[58.961465] (-) TimerEvent: {}
+[59.062184] (-) TimerEvent: {}
+[59.162948] (-) TimerEvent: {}
+[59.263685] (-) TimerEvent: {}
+[59.364431] (-) TimerEvent: {}
+[59.465171] (-) TimerEvent: {}
+[59.565900] (-) TimerEvent: {}
+[59.666713] (-) TimerEvent: {}
+[59.767410] (-) TimerEvent: {}
+[59.868135] (-) TimerEvent: {}
+[59.968888] (-) TimerEvent: {}
+[60.069636] (-) TimerEvent: {}
+[60.170311] (-) TimerEvent: {}
+[60.271041] (-) TimerEvent: {}
+[60.371781] (-) TimerEvent: {}
+[60.472584] (-) TimerEvent: {}
+[60.573306] (-) TimerEvent: {}
+[60.674014] (-) TimerEvent: {}
+[60.774878] (-) TimerEvent: {}
+[60.875749] (-) TimerEvent: {}
+[60.976892] (-) TimerEvent: {}
+[61.077973] (-) TimerEvent: {}
+[61.179220] (-) TimerEvent: {}
+[61.280514] (-) TimerEvent: {}
+[61.381560] (-) TimerEvent: {}
+[61.482859] (-) TimerEvent: {}
+[61.584504] (-) TimerEvent: {}
+[61.685425] (-) TimerEvent: {}
+[61.786196] (-) TimerEvent: {}
+[61.797578] (ydlidar_ros2_driver) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable ydlidar_ros2_driver_client\x1b[0m\n'}
+[61.886359] (-) TimerEvent: {}
+[61.987096] (-) TimerEvent: {}
+[62.087999] (-) TimerEvent: {}
+[62.189463] (-) TimerEvent: {}
+[62.290363] (-) TimerEvent: {}
+[62.391207] (-) TimerEvent: {}
+[62.492224] (-) TimerEvent: {}
+[62.593459] (-) TimerEvent: {}
+[62.694487] (-) TimerEvent: {}
+[62.795749] (-) TimerEvent: {}
+[62.896844] (-) TimerEvent: {}
+[62.997813] (-) TimerEvent: {}
+[63.098652] (-) TimerEvent: {}
+[63.200111] (-) TimerEvent: {}
+[63.301875] (-) TimerEvent: {}
+[63.402540] (-) TimerEvent: {}
+[63.503230] (-) TimerEvent: {}
+[63.603919] (-) TimerEvent: {}
+[63.704687] (-) TimerEvent: {}
+[63.806003] (-) TimerEvent: {}
+[63.906719] (-) TimerEvent: {}
+[64.007481] (-) TimerEvent: {}
+[64.064767] (ydlidar_ros2_driver) StdoutLine: {'line': b'[100%] Built target ydlidar_ros2_driver_client\n'}
+[64.107657] (-) TimerEvent: {}
+[64.149652] (ydlidar_ros2_driver) CommandEnded: {'returncode': 0}
+[64.151920] (ydlidar_ros2_driver) JobProgress: {'identifier': 'ydlidar_ros2_driver', 'progress': 'install'}
+[64.207907] (-) TimerEvent: {}
+[64.227137] (ydlidar_ros2_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver'], 'cwd': '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'pi'), ('SSH_CLIENT', '10.42.0.14 43896 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/pi/microros_ws/install/visualization_msgs/lib:/home/pi/microros_ws/install/test_msgs/lib:/home/pi/microros_ws/install/example_interfaces/lib:/home/pi/microros_ws/install/action_msgs/lib:/home/pi/microros_ws/install/unique_identifier_msgs/lib:/home/pi/microros_ws/install/trajectory_msgs/lib:/home/pi/microros_ws/install/stereo_msgs/lib:/home/pi/microros_ws/install/std_srvs/lib:/home/pi/microros_ws/install/shape_msgs/lib:/home/pi/microros_ws/install/sensor_msgs/lib:/home/pi/microros_ws/install/nav_msgs/lib:/home/pi/microros_ws/install/diagnostic_msgs/lib:/home/pi/microros_ws/install/geometry_msgs/lib:/home/pi/microros_ws/install/actionlib_msgs/lib:/home/pi/microros_ws/install/std_msgs/lib:/home/pi/microros_ws/install/statistics_msgs/lib:/home/pi/microros_ws/install/rmw_microxrcedds/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/pi/microros_ws/install/rosgraph_msgs/lib:/home/pi/microros_ws/install/rclc_parameter/lib:/home/pi/microros_ws/install/rclc/lib:/home/pi/microros_ws/install/composition_interfaces/lib:/home/pi/microros_ws/install/rcl_interfaces/lib:/home/pi/microros_ws/install/microxrcedds_client/lib:/home/pi/microros_ws/install/microcdr/lib:/home/pi/microros_ws/install/micro_ros_utilities/lib:/home/pi/microros_ws/install/micro_ros_agent/lib:/home/pi/microros_ws/install/micro_ros_msgs/lib:/home/pi/microros_ws/install/lifecycle_msgs/lib:/home/pi/microros_ws/install/complex_msgs/lib:/home/pi/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/pi'), ('OLDPWD', '/home/pi/mrrobot/src'), ('SSH_TTY', '/dev/pts/2'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/pi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'pi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs_py:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/pi/mrrobot/src/ydlidar_ros2_ws/build/ydlidar_ros2_driver'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '10.42.0.14 43896 10.42.0.1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/pi/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/pi/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/pi/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/pi/microros_ws/install/micro_ros_demos_rclc:/home/pi/microros_ws/install/common_interfaces:/home/pi/microros_ws/install/visualization_msgs:/home/pi/microros_ws/install/test_msgs:/home/pi/microros_ws/install/example_interfaces:/home/pi/microros_ws/install/action_msgs:/home/pi/microros_ws/install/unique_identifier_msgs:/home/pi/microros_ws/install/trajectory_msgs:/home/pi/microros_ws/install/stereo_msgs:/home/pi/microros_ws/install/std_srvs:/home/pi/microros_ws/install/shape_msgs:/home/pi/microros_ws/install/sensor_msgs:/home/pi/microros_ws/install/nav_msgs:/home/pi/microros_ws/install/diagnostic_msgs:/home/pi/microros_ws/install/geometry_msgs:/home/pi/microros_ws/install/actionlib_msgs:/home/pi/microros_ws/install/std_msgs:/home/pi/microros_ws/install/statistics_msgs:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/pi/microros_ws/install/rmw_microxrcedds:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/pi/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/pi/microros_ws/install/rosgraph_msgs:/home/pi/microros_ws/install/rclc_parameter:/home/pi/microros_ws/install/rclc:/home/pi/microros_ws/install/composition_interfaces:/home/pi/microros_ws/install/rcl_interfaces:/home/pi/microros_ws/install/microxrcedds_client:/home/pi/microros_ws/install/microcdr:/home/pi/microros_ws/install/micro_ros_utilities:/home/pi/microros_ws/install/micro_ros_setup:/home/pi/microros_ws/install/micro_ros_agent:/home/pi/microros_ws/install/micro_ros_msgs:/home/pi/microros_ws/install/lifecycle_msgs:/home/pi/microros_ws/install/complex_msgs:/home/pi/microros_ws/install/builtin_interfaces:/home/pi/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[64.308142] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[64.308774] (-) TimerEvent: {}
+[64.309947] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[64.313120] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_node\n'}
+[64.389968] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_client\n'}
+[64.408981] (-) TimerEvent: {}
+[64.469317] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar.py\n'}
+[64.509165] (-) TimerEvent: {}
+[64.543808] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar_launch.py\n'}
+[64.609399] (-) TimerEvent: {}
+[64.620651] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/launch/ydlidar_launch_view.py\n'}
+[64.697465] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G1.yaml\n'}
+[64.709590] (-) TimerEvent: {}
+[64.776086] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G2.yaml\n'}
+[64.809797] (-) TimerEvent: {}
+[64.851822] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G4.yaml\n'}
+[64.910006] (-) TimerEvent: {}
+[64.929474] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/G6.yaml\n'}
+[65.004820] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/GS2.yaml\n'}
+[65.010159] (-) TimerEvent: {}
+[65.080534] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/GS5.yaml\n'}
+[65.110337] (-) TimerEvent: {}
+[65.156242] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/TEA.yaml\n'}
+[65.210526] (-) TimerEvent: {}
+[65.231329] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/TG.yaml\n'}
+[65.308774] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/Tmini-Plus-SH.yaml\n'}
+[65.310653] (-) TimerEvent: {}
+[65.393933] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/Tmini.yaml\n'}
+[65.410848] (-) TimerEvent: {}
+[65.475591] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X2.yaml\n'}
+[65.511041] (-) TimerEvent: {}
+[65.549914] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X3.yaml\n'}
+[65.611238] (-) TimerEvent: {}
+[65.626020] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X4-Pro.yaml\n'}
+[65.702071] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/X4.yaml\n'}
+[65.711418] (-) TimerEvent: {}
+[65.777544] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/sdm15.yaml\n'}
+[65.811600] (-) TimerEvent: {}
+[65.861823] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/params/ydlidar.yaml\n'}
+[65.911791] (-) TimerEvent: {}
+[65.947898] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/startup/initenv.sh\n'}
+[66.011999] (-) TimerEvent: {}
+[66.029954] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/config/ydlidar.rviz\n'}
+[66.106516] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/package_run_dependencies/ydlidar_ros2_driver\n'}
+[66.112166] (-) TimerEvent: {}
+[66.183621] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/parent_prefix_path/ydlidar_ros2_driver\n'}
+[66.212423] (-) TimerEvent: {}
+[66.260358] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/ament_prefix_path.sh\n'}
+[66.312653] (-) TimerEvent: {}
+[66.336135] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/ament_prefix_path.dsv\n'}
+[66.412839] (-) TimerEvent: {}
+[66.414214] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/path.sh\n'}
+[66.491115] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/environment/path.dsv\n'}
+[66.513027] (-) TimerEvent: {}
+[66.569487] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.bash\n'}
+[66.613225] (-) TimerEvent: {}
+[66.644544] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.sh\n'}
+[66.713418] (-) TimerEvent: {}
+[66.720933] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.zsh\n'}
+[66.797541] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/local_setup.dsv\n'}
+[66.813589] (-) TimerEvent: {}
+[66.873035] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.dsv\n'}
+[66.913764] (-) TimerEvent: {}
+[66.949522] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ament_index/resource_index/packages/ydlidar_ros2_driver\n'}
+[67.013952] (-) TimerEvent: {}
+[67.027116] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/cmake/ydlidar_ros2_driverConfig.cmake\n'}
+[67.114224] (-) TimerEvent: {}
+[67.118973] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/cmake/ydlidar_ros2_driverConfig-version.cmake\n'}
+[67.195110] (ydlidar_ros2_driver) StdoutLine: {'line': b'-- Symlinking: /home/pi/mrrobot/src/ydlidar_ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.xml\n'}
+[67.214383] (-) TimerEvent: {}
+[67.277434] (ydlidar_ros2_driver) CommandEnded: {'returncode': 0}
+[67.315098] (-) TimerEvent: {}
+[67.394776] (ydlidar_ros2_driver) JobEnded: {'identifier': 'ydlidar_ros2_driver', 'rc': 0}
+[67.397697] (-) EventReactorShutdown: {}
