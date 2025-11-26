@@ -20,12 +20,12 @@ def generate_launch_description():
             name='diff_tf',
             output='screen'
         ),
-        Node(
-            package='robot_localization',
-            executable='ekf_node',
-            name='ekf_node',
-            output='screen',
-            parameters=[os.path.join(pkg_share, 'config/ekf.yaml')]
-    )
+    #     Node(
+    #         package='robot_localization',
+    #         executable='ekf_node',
+    #         name='ekf_node',
+    #         output='screen',
+    #         parameters=[os.path.join(pkg_share, 'config/ekf.yaml')]
+    # )
     ])
     

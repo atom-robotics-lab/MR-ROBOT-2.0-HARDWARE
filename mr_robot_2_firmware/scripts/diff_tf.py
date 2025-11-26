@@ -32,10 +32,10 @@ class DiffTf(Node):
         self.create_timer(1.0 / self.rate_hz, self.update)
 
         self.ticks_meter_l = float(
-            self.declare_parameter('ticks_meter_l', 470).value)  # The number of wheel encoder ticks per meter of travel
+            self.declare_parameter('ticks_meter_l', 445).value)  # The number of wheel encoder ticks per meter of travel
         self.ticks_meter_r = float(
-            self.declare_parameter('ticks_meter_r', 470).value)  # The number of wheel encoder ticks per meter of travel
-        self.base_width = float(self.declare_parameter('base_width', 0.367).value)  # The wheel base width in meters
+            self.declare_parameter('ticks_meter_r', 466).value)  # The number of wheel encoder ticks per meter of travel
+        self.base_width = float(self.declare_parameter('base_width', 0.40).value)  # The wheel base width in meters
 
         self.base_frame_id = self.declare_parameter('base_frame_id',
                                                     'base_link').value  # the name of the base frame of the robot
@@ -66,8 +66,8 @@ class DiffTf(Node):
         self.then = self.get_clock().now()
 
         # subscriptions
-        self.create_subscription(Int32, "/left_encoder_ticks", self.lwheel_callback, 10)
-        self.create_subscription(Int32, "/right_encoder_ticks", self.rwheel_callback, 10)
+        self.create_subscription(Int32, "/left_encoder_ticks", self.rwheel_callback, 10)
+        self.create_subscription(Int32, "/right_encoder_ticks", self.lwheel_callback, 10)
         self.odom_pub = self.create_publisher(Odometry, "odom", 10)
         self.odom_broadcaster = TransformBroadcaster(self)
 
@@ -125,7 +125,7 @@ class DiffTf(Node):
         transform_stamped_msg.transform.rotation.z = quaternion.z
         transform_stamped_msg.transform.rotation.w = quaternion.w
 
-        # self.odom_broadcaster.sendTransform(transform_stamped_msg)
+        self.odom_broadcaster.sendTransform(transform_stamped_msg)
 
         odom = Odometry()
         odom.header.stamp = now.to_msg()
